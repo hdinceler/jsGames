@@ -10,18 +10,26 @@
 }
 #canlar{
     text-align: left;
+    background-color: black;
 }
 #puanlar{
     text-align: right;
 }
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
 background-color: rgba(101, 74, 23, 0.998);
 cursor: url('rabbit2.png') 16 16, auto;
 background-image: url('./grass.png');
 overflow: hidden;
+position: relative;
 margin: 0;
 padding: 0;
-height: 100vh;
+height: 100%;
 width: 100vw;
 }
 
@@ -68,4 +76,21 @@ animation: caprazAnimasyon 5s ease 0s alternate infinite;
 }
 #yilan{
 animation: caprazAnimasyon2 10s ease 0s alternate infinite;
+}
+#gameOver{
+    background-color: rgb(37, 2, 37);
+    color:white;
+    font-size: 42px;
+    text-align: center;
+    z-index: 101;
+    height: 100vh;
+    width: 100vw;
+    top:0;
+    left:0;
+    position: fixed;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    opacity: 0.9;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
