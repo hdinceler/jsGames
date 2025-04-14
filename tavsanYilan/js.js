@@ -1,6 +1,6 @@
 window.onload=()=>{
     let puan=0;
-    let can=3;
+    let can=10;
     const skorTablosu=document.getElementById('skorTablosu');
     const puanlar=document.getElementById('puanlar');
     const canlar=document.getElementById('canlar');
@@ -23,7 +23,7 @@ window.onload=()=>{
             canlar.appendChild(tavsan);
         }
      }
-canYaz(3)
+    canYaz(can)
 
      havuc1.addEventListener(
         'click' , ()=>{ 
