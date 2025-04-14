@@ -28,14 +28,14 @@ canYaz(3)
      havuc1.addEventListener(
         'click' , ()=>{ 
             puan+=10;
-            skorTablosu.innerText=puan + " PUAN"
+            puanlar.innerText=puan + " PUAN"
             canYaz(can)
          }
      );
      havuc2.addEventListener(
         'click' , ()=>{ 
             puan+=20;
-            skorTablosu.innerText=puan + " PUAN"
+            puanlar.innerText=puan + " PUAN"
             canYaz(can)
          }
      );
@@ -43,7 +43,7 @@ canYaz(3)
      havuc3.addEventListener(
         'click' , ()=>{ 
             puan+=30;
-            skorTablosu.innerText=puan + " PUAN"
+            puanlar.innerText=puan + " PUAN"
             canYaz(can)
          }
      );
