@@ -14,13 +14,12 @@ window.onload=()=>{
 
     const canYaz=(adet)=>{
         console.log(can);
-        canlar.innerHTML="12"
+        canlar.innerHTML=""
         for(let i=1; i<=adet;i++){
             const tavsan=document.createElement('img');
             tavsan.src='./rabbit.png';
             tavsan.height=54;
             tavsan.alt = "can";
-            tavsan.style.border = "1px solid red"; // gözle görmek için
             canlar.appendChild(tavsan);
         }
      }
@@ -51,7 +50,7 @@ canYaz(3)
   
      yilan.addEventListener(
         'click' , ()=>{ 
-            canYaz(3)
+            canYaz(can)
             puan=0;
             skorTablosu.innerText=puan + " PUAN";
             can--
