@@ -50,10 +50,10 @@ canYaz(3)
   
      yilan.addEventListener(
         'click' , ()=>{ 
+            can--
             canYaz(can)
             puan=0;
-            skorTablosu.innerText=puan + " PUAN";
-            can--
+            puanlar.innerText=puan + " PUAN";
             if(can <=0 ){ perde.style.display='block'; }
          }
      );
