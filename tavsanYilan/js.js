@@ -4,23 +4,27 @@ window.onload=()=>{
     const skorTablosu=document.getElementById('skorTablosu');
     const puanlar=document.getElementById('puanlar');
     const canlar=document.getElementById('canlar');
+    const perde=document.getElementById("gameOver");
+    perde.style.display='none';
 
-     const yilan=document.getElementById("yilan");
-     const havuc1=document.getElementById("havuc1");
-     const havuc2=document.getElementById("havuc2");
-     const havuc3=document.getElementById("havuc3");
+    const yilan=document.getElementById("yilan");
+    const havuc1=document.getElementById("havuc1");
+    const havuc2=document.getElementById("havuc2");
+    const havuc3=document.getElementById("havuc3");
 
-     canYaz=(adet)=>{
+    const canYaz=(adet)=>{
         console.log(can);
-        canlar.innerHTML=""
+        canlar.innerHTML="12"
         for(let i=1; i<=adet;i++){
             const tavsan=document.createElement('img');
             tavsan.src='./rabbit.png';
             tavsan.height=54;
+            tavsan.alt = "can";
+            tavsan.style.border = "1px solid red"; // gözle görmek için
             canlar.appendChild(tavsan);
         }
      }
-
+canYaz(3)
 
      havuc1.addEventListener(
         'click' , ()=>{ 
@@ -44,13 +48,14 @@ window.onload=()=>{
             canYaz(can)
          }
      );
+  
      yilan.addEventListener(
         'click' , ()=>{ 
+            canYaz(3)
             puan=0;
             skorTablosu.innerText=puan + " PUAN";
             can--
-            if(can <=0)
-            canYaz(can)
+            if(can <=0 ){ perde.style.display='block'; }
          }
      );
 
