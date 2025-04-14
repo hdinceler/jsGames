@@ -1,0 +1,71 @@
+#skorTablosu{
+    background-color: yellow;
+    font-size: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:purple;
+    padding: 4px;
+    box-shadow: 4px 4px 2px black;
+    display:flex;
+    justify-content: space-between;
+}
+#canlar{
+    text-align: left;
+}
+#puanlar{
+    text-align: right;
+}
+body{
+background-color: rgba(101, 74, 23, 0.998);
+cursor: url('rabbit2.png') 16 16, auto;
+background-image: url('./grass.png');
+overflow: hidden;
+margin: 0;
+padding: 0;
+height: 100vh;
+width: 100vw;
+}
+
+@keyframes yatayAnimasyon1{
+0%{ transform: translateX(0px); }
+100%{ transform: translateX(500px); }
+} 
+
+@keyframes yatayAnimasyon2{
+0%{ transform: translateX(0px); }
+30%{ transform: translateX(100px); }
+50%{ transform: translateX(80px); }
+100%{ transform: translateX(500px); }
+}
+@keyframes caprazAnimasyon{
+0%{transform: translateX(0px) translateY(0px);}
+20%{transform: translateX(100) translateY(200px);}
+30%{transform: translateX(200px) translateY(400px);}
+40%{transform: translateX(300px) translateY(20px);}
+70%{transform: translateX(400px) translateY(90px);}
+80%{transform: translateX(200px) translateY(0px);}
+90%{transform: translateX(10px) translateY(50px);}
+100%{transform: translateX(0px) translateY(100px);}
+}
+@keyframes caprazAnimasyon2{
+   0%{transform: translateX(10px) translateY(50px);}
+   10%{transform: translateX(100) translateY(200px);}
+   20%{transform: translateX(400px) translateY(90px);}
+   30%{transform: translateX(0px) translateY(0px);}
+   40%{transform: translateX(200px) translateY(0px);}
+   80%{transform: translateX(200px) translateY(400px);}
+   90%{transform: translateX(0px) translateY(100px);}
+   100%{transform: translateX(300px) translateY(20px);}
+}
+#havuc1{
+animation: yatayAnimasyon1 4s ease 0s alternate infinite;
+}
+
+#havuc2{
+animation: yatayAnimasyon2 4s ease 0s alternate infinite;
+}
+#havuc3{
+animation: caprazAnimasyon 5s ease 0s alternate infinite;
+}
+#yilan{
+animation: caprazAnimasyon2 10s ease 0s alternate infinite;
+}
