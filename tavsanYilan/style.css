@@ -63,6 +63,7 @@ width: 100vw;
    90%{transform: translateX(0px) translateY(100px);}
    100%{transform: translateX(300px) translateY(20px);}
 }
+ 
 #havuc1{
 animation: yatayAnimasyon1 4s ease 0s alternate infinite;
 }
