@@ -1,132 +1,88 @@
-const items = [
-  { img: "brokoli", ad: "Brokoli", fayda: true },
-  { img: "spinach", ad: "Ispanak", fayda: true },
-  { img: "havuc", ad: "Havuç", fayda: true },
-  { img: "biber", ad: "Biber", fayda: true },
-  { img: "domates", ad: "Domates", fayda: true },
-  { img: "enginar", ad: "Enginar", fayda: true },
-  { img: "milk", ad: "Süt", fayda: true },
-  { img: "lahana", ad: "Lahana", fayda: true },
-  { img: "patlican", ad: "Patlıcan", fayda: true },
-  { img: "fish", ad: "Balık", fayda: true },
-  { img: "salatalik", ad: "Salatalık", fayda: true },
-  { img: "sogan", ad: "Soğan", fayda: true },
-  { img: "patates", ad: "Patates", fayda: true },
-  { img: "cola", ad: "Kola", fayda: false },
-  { img: "burger", ad: "Hamburger", fayda: false },
-  { img: "energyDrink", ad: "Enerji İçeceği", fayda: false },
-  { img: "rottenApple", ad: "Çürük Elma", fayda: false },
-  { img: "rottenMeat", ad: "Bayat Et", fayda: false },
-  { img: "candy", ad: "Şekerleme", fayda: false },
-  { img: "chips", ad: "Cips", fayda: false }, 
-  { img: "sausage", ad: "Nitratlı Sucuk", fayda: false }, 
-  
-];
+window.onload=()=>{
+    const rastgeleDolas=(element,elementHeight)=>{
+        const animasyonAdi=element.id || `${Math.floor(Math.random()*10000)}`;
+        const styleTag=document.createElement('style');
+        document.head.appendChild(styleTag);
 
-const ekranGenislik = window.innerWidth;
-const ekranYukseklik = window.innerHeight;
+        let keyframes=`@keyframes dolas_${animasyonAdi}{`;
+        const frameCount=10;
+        for(let i=0;i<=100; i+=100/frameCount){
+            const x=Math.floor(Math.random()*window.innerWidth);
+            const y=Math.floor(Math.random()*window.innerHeight);
+            keyframes+=`${i}%{transform:translate(${x}px,${y}px)}`;
+        }
+        keyframes+=`}`;
+        styleTag.innerHTML=keyframes;
+        element.style.position='absolute';
+        element.style.height=`${elementHeight}px`;
+        element.style.animation=`dolas_${animasyonAdi} 15s infinite alternate-reverse linear`;
+    }
+    const items=[]
+    let puan=0;
+    let can=1;
+    const skorTablosu=document.getElementById('skorTablosu');
+    const puanlar=document.getElementById('puanlar');
+    const canlar=document.getElementById('canlar');
+    const perde=document.getElementById("gameOver");
+    const gift=document.getElementById('gift');
+    perde.style.display='none';
 
-// Sayfa yüklendikten sonra sabit genişlik ve yükseklik uygula
-window.onload = function() {
-    // Genişlik ve yükseklik sabitle
-    document.body.style.width = ekranGenislik + "px";
-    document.body.style.height = ekranYukseklik + "px";
-
-    // Overflow-x'i gizle
-    document.body.style.overflowX = 'hidden';
-    document.body.style.overflowY = 'hidden';  // Dikey kaydırma çubuğu da engellenebilir
-}
-
-
-const itemsArea = document.getElementById('itemsArea');
-const scorePanel = document.getElementById('scorePanel');
-const scoreFayda= document.getElementById('scoreFayda');
-const scoreZarar= document.getElementById('scoreZarar');
-const scoreNet= document.getElementById('scoreNet');
-
-let puanFayda=0;
-let puanZarar=0;
-let puanNet = 0;
-let puanKatsayisi = 1;
-const itemSize = 96;
-
-// 1. Ekranı satırlara böl
-function getKonumlar() {
-  const kolonSayisi = Math.floor(ekranGenislik / itemSize);
-  const konumlar = [];
-
-  for (let i = 0; i < kolonSayisi; i++) {
-    konumlar.push(i * itemSize);
-  }
-
-  return konumlar;
-}
-
-function itemYap(newItem) {
-  const item = document.createElement('div');
-
-  item.classList.add("item");
     
-  // 2. Rastgele bir konum seç, çakışma yok çünkü sabit boşluklar var
-  const konumlar = getKonumlar();
-  const randomLeft = konumlar[Math.floor(Math.random() * konumlar.length)];
-  item.style.left = randomLeft + "px";
-  item.style.top ="-" + itemSize + "px"; // başlangıç noktası yukarıda
+    const yilan=document.getElementById("yilan");
+    const havuc1=document.getElementById("havuc1");
+    const havuc2=document.getElementById("havuc2");
+    const havuc3=document.getElementById("havuc3");
+    
+    rastgeleDolas(gift,96)
+    rastgeleDolas(yilan,64)
+    rastgeleDolas(havuc1,96)
+    rastgeleDolas(havuc2,96)
+    rastgeleDolas(havuc3,96)
 
-  const itemImg=document.createElement('img')
-  itemImg.style.height=itemSize+"px";
-  itemImg.src = './img/' + newItem.img + '.png';
+    const canYaz=(adet)=>{
+        console.log(can);
+        canlar.innerHTML=""
+        for(let i=1; i<=adet;i++){
+            const tavsan=document.createElement('img');
+            tavsan.src='./rabbit.png';
+            tavsan.height=54;
+            tavsan.alt = "can";
+            canlar.appendChild(tavsan);
+        }
+     }
+    canYaz(can)
 
-  
-  
-  item.appendChild(itemImg);
-  
-  const itemName=document.createElement('span')
-  itemName.innerText=newItem.ad;
-  itemName.className="itemName";
-  itemsArea.appendChild(item);
-  item.appendChild(itemName);
-  
-  let itemKonum = -itemSize;
-  
-  if(newItem.fayda===false){
-    item.classList.add("danger");
-    itemName.style.color="red";
-  }
+     havuc1.addEventListener(
+        'click' , ()=>{
+            puan+=10;
+            puanlar.innerText=puan + " PUAN"
+            canYaz(can)
+         }
+     );
+     havuc2.addEventListener(
+        'click' , ()=>{
+            puan+=20;
+            puanlar.innerText=puan + " PUAN"
+            canYaz(can)
+         }
+     );
 
-  function hareketEt() {
-    itemKonum += 2;
-    item.style.top = itemKonum + "px";
+     havuc3.addEventListener(
+        'click' , ()=>{
+            puan+=30;
+            puanlar.innerText=puan + " PUAN"
+            canYaz(can)
+         }
+     );
 
-    if (itemKonum >= window.innerHeight) {
-      item.remove();
-    } else {
-      requestAnimationFrame(hareketEt);
-    }
-  }
+     yilan.addEventListener(
+        'click' , ()=>{
+            can--
+            canYaz(can)
+            puan=0;
+            puanlar.innerText=puan + " PUAN";
+            if(can <=0 ){ perde.style.display='block'; }
+         }
+     );
 
- 
-  item.addEventListener('click', () => {
-    if(newItem.fayda===false){
-      puanZarar++;
-      item.classList.add("dangerBoom");
-    }else{
-      puanFayda++;
-    }
-    puanNet = puanKatsayisi*(puanFayda-puanZarar);
-    scoreFayda.innerHTML="fayda:"+puanKatsayisi*puanFayda;
-    scoreZarar.innerHTML="zarar:"+puanKatsayisi*puanZarar;
-    scoreNet.innerHTML="puan:"+puanNet;
-    item.classList.remove("danger")
-    item.classList.add("grow")
-    setTimeout(()=>item.remove(),1000)
-  });
-
-  hareketEt();
 }
-
-// Sürekli yeni item düşür
-setInterval(() => {
-  const randomItem = items[Math.floor(Math.random() * items.length)];
-  itemYap(randomItem);
-}, 800);
