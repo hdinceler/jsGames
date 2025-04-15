@@ -23,7 +23,7 @@
 html,body{
 background-color: rgba(101, 74, 23, 0.998);
 cursor: url('rabbit2.png') 16 16, auto;
-background-image: url('./grass.png');
+background-image: url('./grass3.jpg');
 overflow: hidden;
 position: relative;
 margin: 0;
@@ -32,51 +32,7 @@ height: 100%;
 width: 100vw;
 }
 
-@keyframes yatayAnimasyon1{
-0%{ transform: translateX(0vw); }
-100%{ transform: translateX(100vw); }
-} 
-
-@keyframes yatayAnimasyon2{
-0%{ transform: translateX(0vw); }
-30%{ transform: translateX(50vw); }
-50%{ transform: translateX(80vw); }
-100%{ transform: translateX(100vw); }
-}
-@keyframes caprazAnimasyon{
-0%{transform: translateX(0vw) translateY(0vw);}
-20%{transform: translateX(100vw) translateY(100vw);}
-30%{transform: translateX(20vw) translateY(40vw);}
-40%{transform: translateX(30vw) translateY(20vw);}
-70%{transform: translateX(40vw) translateY(90vw);}
-80%{transform: translateX(200vw) translateY(0vw);}
-90%{transform: translateX(10vw) translateY(50vw);}
-100%{transform: translateX(0vw) translateY(100vw);}
-}
-@keyframes caprazAnimasyon2{
-   0%{transform: translateX(10vw) translateY(50vw);}
-   10%{transform: translateX(100) translateY(200vw);}
-   20%{transform: translateX(40vw) translateY(90vw);}
-   30%{transform: translateX(0vw) translateY(0vw);}
-   40%{transform: translateX(20vw) translateY(0vw);}
-   80%{transform: translateX(20vw) translateY(400vw);}
-   90%{transform: translateX(0vw) translateY(100vw);}
-   100%{transform: translateX(30vw) translateY(20vw);}
-}
- 
-#havuc1{
-animation: yatayAnimasyon1 4s ease 0s alternate infinite;
-}
-
-#havuc2{
-animation: yatayAnimasyon2 4s ease 0s alternate infinite;
-}
-#havuc3{
-animation: caprazAnimasyon 5s ease 0s alternate infinite;
-}
-#yilan{
-animation: caprazAnimasyon2 10s ease 0s alternate infinite;
-}
+  
 #gameOver{
     background-color: rgb(37, 2, 37);
     color:white;
