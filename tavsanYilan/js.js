@@ -1,6 +1,6 @@
 window.onload=()=>{
     const rastgeleDolas=(element,elementHeight)=>{
-        const animasyonAdi=element.id || `${Math.floor(Math.random()*10000)}`;
+        const animasyonAdi=element.id + `${Math.floor(Math.random()*10000)}`;
         const styleTag=document.createElement('style');
         document.head.appendChild(styleTag);
 
@@ -19,7 +19,8 @@ window.onload=()=>{
     }
     const items=[]
     let puan=0;
-    let can=1;
+    canLimiti=3;
+    let can=canLimiti;
     const skorTablosu=document.getElementById('skorTablosu');
     const puanlar=document.getElementById('puanlar');
     const canlar=document.getElementById('canlar');
@@ -35,6 +36,8 @@ window.onload=()=>{
     
     rastgeleDolas(gift,96)
     rastgeleDolas(yilan,64)
+    rastgeleDolas(yilan,64)
+    rastgeleDolas(cabbage,94)
     rastgeleDolas(havuc1,96)
     rastgeleDolas(havuc2,96)
     rastgeleDolas(havuc3,96)
@@ -84,5 +87,9 @@ window.onload=()=>{
             if(can <=0 ){ perde.style.display='block'; }
          }
      );
-
+     gift.addEventListener('click', ()=>{
+        if(can<canLimiti)
+        can++;
+        canYaz(can);
+     })
 }
