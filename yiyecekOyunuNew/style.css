@@ -6,10 +6,10 @@ body{
     margin: 0 auto;
     height: 100vh;
     width:100vw;
-    background-color: rgba(28, 175, 28, 0.308);
+    background-color:rgba(187, 212, 44, 0.606);
     /* cursor: url('./img/pot.png') 16 16,auto; */
     cursor: grab;
-    cursor:url('./img/hand64.png') 32 32,auto;
+    cursor:url('./img/kid.png') 32 32,auto;
     overflow-x: hidden;  /* Yatay kaydırma çubuğunu engeller */
     overflow-y: hidden;  /* Dikey kaydırma çubuğunu engeller */
 }
@@ -32,15 +32,18 @@ body{
     transform: scale(1);
     transition: transform 0.1s ease;
     transform-origin: center center;
-
     /*seçilmeyi engelle*/
     user-select: none;
     -webkit-user-select: none; /* Safari ve eski tarayıcılar için */
     -moz-user-select: none; /* Firefox için */
     -ms-user-select: none; /* Internet Explorer için */
+    background-color: rgba(255, 217, 0, 0.709);
+    border-radius: 50%;
+    height: 128px;
+    width:128px;
+    box-shadow: 0 0 10px goldenrod;
 }
 .item:hover{
-    cursor:url('./img/hand64Blue.png') 32 32,auto;
     transform:scale(1.2);
 }
  
@@ -50,7 +53,8 @@ body{
  #itemsArea{
     width: 100%;  /* Ekranın tamamını kapsar */
     height: 100%; /* Ekranın tamamını kapsar */
- }
+
+}
 .itemName{
     position:relative;
     display: block;
@@ -75,36 +79,86 @@ body{
 .scorePanel{
     display:flex;
     width:100%;
-    background-color:rgb(30, 199, 30);
-    color:white;
     text-align: center;
     font-size: xx-large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    height:36px;
-    box-shadow: 0 0 4px black;
     position: relative;
-    z-index: 2;
+    z-index: 100;
     margin:0;
-    
 }
-#scoreFayda{
+.scoreThumb{
+    margin-left:1rem;
+    margin-right:1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+
+    height:6rem;
+    width:4rem;
+    
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    
+    background-color: gold;
     position: relative;
-    padding-right:15px;
-    background-color: green;
-    width: 33.3%;
+
+    box-shadow: 0 0 4px black;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+}
+.scoreHealthly{background-image: url('./img/healthly.png');}
+.scoreUnhealthly{background-image: url('./img/unhealthly.png');}
+.scoreNetPoint{background-image: url('./img/happy2.png');}
+.scoreMusicPlay{background-image: url('./img/music.png');cursor: pointer;}
+.scoreMusicMute{background-image: url('./img/musicMute.png');cursor: pointer;}
+.scoreThumbText{
+    color: gold;
+    text-shadow:1px 1px 4px black ;
+    left:50%;
+    transform: translateX(-50%);
+    bottom:0rem;
+    position: absolute;
+    color:black;
+}
+ 
+ .coin{
+    background-image: url('./img/coin.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(124, 108, 18);
+    text-shadow: 1px 1px 10px rgba(217, 217, 194, 0.409);
+    font-size: 1.2rem;
+    height: 3.5rem;
+    width:3.5rem;
+    position:absolute;
+    bottom:1rem;
+    right:50%;
+    transform: translateX(-50%);
 }
 
-#scoreZarar{
-    position: relative;
-    padding-right:15px;
-    background-color: red;
-    width: 33.3%;
-    text-align: center;
+#perde{
+    cursor:pointer;
+    display: none;
+    position: fixed;
+    color:white;
+    height:100vh;
+    width: 100vw;
+    transition: opacity 2s ease;
+    opacity: 0;
+    z-index: -9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-#scoreNet{
-    position: relative;
-    padding-right:15px;
-    background-color: blue;
-    width: 33.3%;
-    text-align: center;
-}
+
+#perde.show{opacity: 1;}
