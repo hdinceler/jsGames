@@ -105,7 +105,10 @@ body{
 #topRakip{
     height: 100px;
     width:100px;
-    background-color: red;
+    background-image: url('./playerTesla.png');
+    background-size: contain;      /* veya 64px 64px */
+    background-repeat: no-repeat;
+    width: 128px;
     border-radius: 50%;
     z-index: 9999;
     position: absolute;
@@ -114,8 +117,12 @@ body{
 #topBen{
     height: 100px;
     width:100px;
-    background-color: rgb(26, 255, 0);
-    border-radius: 50%;
+  
     z-index: 9999;
     position: absolute;
+    background-image: url('./playerTofas.png');
+    background-size: contain;      /* veya 64px 64px */
+    background-repeat: no-repeat;
+    width: 256px;
 }
+ 
