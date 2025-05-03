@@ -1,52 +1,128 @@
-#skorTablosu{
-    background-color: yellow;
-    font-size: xx-large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color:purple;
-    padding: 4px;
-    box-shadow: 4px 4px 2px black;
+@font-face {
+    font-family: 'ozelFont';
+    src: url('./fonts/PlaypenSans-Regular.ttf');
+}
+*{
+    cursor: none;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+h1{
+    font-family: 'ozelFont';
+    text-align: center;
+    display: block;
+    color:orangered;
+    text-shadow: 0 0 4px orangered;
+}
+body{
+    background-color:rgba(255, 255, 0, 0.197);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#mesajPanosu{
+    font-family: 'ozelFont';
+    height:400px;
+    width:90%;
+    background-color: rgba(255, 255, 0, 0.32);
+    font-size: 1.3rem;
+    padding: 10px;
+    text-indent: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px grey;
+}
+#mesajYaz{
+    font-family: 'ozelFont';
+    height:96px;
+    margin-top:1rem;
+    width:90%;
+    background-color: rgba(255, 255, 0, 0.32);
+    font-size: 1.3rem;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px grey;
     display:flex;
     justify-content: space-between;
 }
-#canlar{
-    text-align: left;
+#gidecekMesaj{
+    width:90%;
+    border:1px solid grey;
+    border-radius: 10px;
+    padding:10px;
+    font-family: 'ozelFont';
+    background-color: rgb(239, 239, 151);
 }
-#puanlar{
-    text-align: right;
+#gonder{
+    margin-left:0.5rem;
+    width: 10%;
+    height:100%;
+    min-width:6rem;
+    border:0;
+    border-radius: 10px;
+    background-color: greenyellow;
+    font-family: 'ozelFont';
+    font-size: large;
+    box-shadow: 2px 2px 4px grey;
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+#gonder:hover{
+    background-color: rgb(176, 243, 76);
+    cursor: pointer;
+    box-shadow: 0 0 0px grey;
 }
-
-html,body{
-background-color: rgba(101, 74, 23, 0.998);
-cursor: url('rabbit2.png') 16 16, auto;
-background-image: url('./grass3.jpg');
-overflow: hidden;
-position: relative;
-margin: 0;
-padding: 0;
-height: 100%;
-width: 100vw;
-}
-
-  
-#gameOver{
-    background-color: rgb(37, 2, 37);
-    color:white;
-    font-size: 42px;
-    text-align: center;
-    z-index: 101;
-    height: 100vh;
-    width: 100vw;
+#navBar{
+    background-color: ;
     top:0;
-    left:0;
-    position: fixed;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    opacity: 0.9;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    height:4rem;
+    width: 100%;
+    z-index:999;
+    display:flex;
+    align-items: flex-start;
+    opacity: 0.8;
 }
+.navBarItem{
+    padding:0.2rem;
+    width:4rem;
+    position: relative;
+}
+.navBarItem img{
+    position: absolute;
+    height:4rem;
+    width:100%;
+    display:block;
+    padding:0.2rem;
+}
+#gelenMesajlar{
+    width: 90%;
+    height:90%;
+    border-radius: 10px;
+    background-color:  rgba(255, 255, 0, 0.32);
+    border:0;
+    font-family:'ozelFont' ;
+    font-size: large;
+}
+#topRakip{
+    height: 100px;
+    width:100px;
+    background-image: url('./playerTesla.png');
+    background-size: contain;      /* veya 64px 64px */
+    background-repeat: no-repeat;
+    width: 128px;
+    border-radius: 50%;
+    z-index: 9999;
+    position: absolute;
+}
+
+#topBen{
+    height: 100px;
+    width:100px;
+  
+    z-index: 9999;
+    position: absolute;
+    background-image: url('./playerTofas.png');
+    background-size: contain;      /* veya 64px 64px */
+    background-repeat: no-repeat;
+    width: 256px;
+}
+ 
